@@ -11,9 +11,10 @@
     "url": "git+https://github.com/optional303/express-architecture.git"
   },
   "author": "Ivan Alexander",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/optional303/express-architecture/issues"
-  },
-  "homepage": "https://github.com/optional303/express-architecture#readme"
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.14.0",
+    "mongoose": "4.6.6",
+    "pug": "2.0.0-beta6"
+  }
 }
