@@ -13,4 +13,6 @@ module.exports = (config) => {
         console.log('MongoDB ready!')
     })
     db.on('error', err => console.log(err))
+
+    require('../data/User').seedAdminUser()
 }
