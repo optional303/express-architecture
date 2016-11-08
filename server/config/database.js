@@ -6,13 +6,13 @@ module.exports = (config) => {
     "use strict";
     mongoose.connect(config.db)
     let db = mongoose.connection
-    db.once('open', (err) => {
+    db.once('open', err => {
         if(err){
             console.log(err)
         }
         console.log('MongoDB ready!')
     })
-    db.on('error', err => console.log(err))
+    db.on('error', err => console.log('Database error: ' + err))
 
     require('../data/User').seedAdminUser()
 }

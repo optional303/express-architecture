@@ -7,5 +7,4 @@ module.exports = {
         "use strict";
         res.render('home/about')
     }
-
 }

@@ -13,7 +13,7 @@ let userSchema = mongoose.Schema({
 })
 
 userSchema.method({
-    authenticate: (password) => {
+    authenticate: function(password){
         "use strict";
         let inputHashedPassword = encryption.generateHashedPassword(this.salt, password)
         if(inputHashedPassword === this.hashedPass){
@@ -26,10 +26,10 @@ userSchema.method({
 let User = mongoose.model('User', userSchema)
 
 module.exports.seedAdminUser = () => {
-    User.find({}).then(users => {
+    User.find({}).then(user => {
         if(user.length === 0) {
             let salt = encryption.generateSalt()
-            let hashedPass = encryption.generateHashedPassword(salt, Admin12)
+            let hashedPass = encryption.generateHashedPassword(salt, 'Admin12')
             "use strict";
             User.create({
                 username: 'Admin',
